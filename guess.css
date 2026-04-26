@@ -1,0 +1,169 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+.guess-game{
+    width: 1000px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #eee;
+    header{
+        h1{
+            text-align: center;
+            font-weight: 900;
+            font-size: 40px;
+            background-color: white;
+            padding: 15px;
+        }
+    }
+    .game-content{
+        display: flex;
+        justify-content: space-between;
+        @media (max-width:992px) {
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            gap: 40px;
+        }
+        .game{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            .trying{
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                .try{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 30px;
+                    padding: 5px;
+                    p{
+                        font-weight: 600;
+                        font-size: 20px;
+                        width: 80px;
+                    }
+                    .inputs{
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 5px;
+                        input{
+                            width: 50px;
+                            height: 50px;
+                            text-align: center;
+                            padding: 10px;
+                            font-size: 35px;
+                            border: none;
+                            border-bottom: 5px solid black;
+                            &:focus{
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .check{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                @media (max-width:500px) {
+                    justify-content: center;
+                }
+                button:first-child{
+                    width: 300px;
+                    max-width: 100%;
+                    padding: 10px;
+                    border: 2px solid white;
+                    font-size: 25px;
+                    color: white;
+                    cursor: pointer;
+                    background-color: red;
+                    transition: 0.5s;
+                    border-radius: 15px;
+                    &:active{
+                        transform: scale(0.5);
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
+            .message{
+                font-size: 25px;
+                color: green;
+                text-align: center;
+            }
+        }
+        .key-colors{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            h2{
+                text-align: center;
+                font-weight: 900;
+            }
+            .info-color{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 10px;
+                .color{
+                    display: flex;
+                    align-items: center;
+                    gap:20px;
+                    background-color: white;
+                    padding: 5px;
+                    p{
+                        font-size: 25px;
+                        font-weight: 600;
+                        @media (max-width:768px) {
+                            font-size: 16px;;
+                        }
+                    }
+                    &:first-child{
+                        span{
+                            width: 25px;
+                            height: 25px;
+                            background-color: green;
+                        }
+                    }
+                    &:nth-child(2){
+                        span{
+                            width: 25px;
+                            height: 25px;
+                            background-color: orange;
+                        }
+                    }
+                    &:last-child{
+                        span{
+                            width: 25px;
+                            height: 25px;
+                            background-color: gray;
+                        }
+                    }
+                }
+            }
+            .refrence{
+                text-align: center;
+                font-size: 18px;
+                color: gray;
+                word-spacing: 2px;
+            }
+        }
+    }
+}
