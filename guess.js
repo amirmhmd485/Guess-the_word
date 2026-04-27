@@ -71,15 +71,14 @@ const try2 = document.querySelectorAll("#t2 input");
 const try3 = document.querySelectorAll("#t3 input");
 const try4 = document.querySelectorAll("#t4 input");
 const try5 = document.querySelectorAll("#t5 input");
-let counter = 0;
-let message = document.querySelector(".message");
+
+
 function valdiate(input , i){
     if(input.value != ""){
         if(input.value == randomPassword[i]){
             input.style.backgroundColor = "green";
             input.style.borderColor = "white";
             input.style.color = "white";
-            counter++;
         }
         else if(randomPassword.includes(input.value)){
             input.style.backgroundColor = "orange"
@@ -92,57 +91,38 @@ function valdiate(input , i){
             input.style.color = "white";
         }
     }
-    if(counter < 3) {
-        if(counter == 0){
-            message.innerHTML = "Failed plz try again!"
-        }
-        else{
-            message.innerHTML = "Poor Once"
-        }
-    }
-    else{
-        if(counter == 6){
-            message.innerHTML = "Bravoooooooo! you win"
-        }
-        else{
-            message.innerHTML = "Good one"
-        }
-    }
 }
 
-function validate1(e){
+function validate1 (){
     try1.forEach((input , i) => {
         valdiate(input , i);
     })
-};
-
-function validate2(e){
     try2.forEach((input , i) => {
         valdiate(input , i);
     })
-};
-
-function validate3(e){
     try3.forEach((input , i) => {
         valdiate(input , i);
     })
-};
-
-function validate4(e){
     try4.forEach((input , i) => {
         valdiate(input , i);
     })
-};
-
-function validate5(e){
     try5.forEach((input , i) => {
         valdiate(input , i);
     })
-};
+}
 
 checkBtn.addEventListener("click" , validate1);
-checkBtn.addEventListener("click" , validate2);
-checkBtn.addEventListener("click" , validate3);
-checkBtn.addEventListener("click" , validate4);
-checkBtn.addEventListener("click" , validate5);
 //End validate inputvalues
+
+
+//reset button
+const resetBtn = document.querySelector(".resetbtn");
+function ResetInputs(e){
+    allInputs.forEach((input , i) => {
+        input.value = "";
+        input.style.cssText = "background-color : white; color : black , border: 5px solid black";
+    })
+    allInputs[0].focus();
+}
+resetBtn.addEventListener("click" , ResetInputs);
+//End reset button
