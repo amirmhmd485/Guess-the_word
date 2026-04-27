@@ -13,7 +13,6 @@ function GenerateRandomPassword(){
 }
 let randomPassword = GenerateRandomPassword();
 // end create Random Password
-
 //validate the inputs
 const allInputs = document.querySelectorAll("input");
 allInputs.forEach((input , i) => {
@@ -92,23 +91,14 @@ function valdiate(input , i){
         }
     }
 }
-
+const message = document.querySelector(".message");
 function validate1 (){
-    try1.forEach((input , i) => {
-        valdiate(input , i);
-    })
-    try2.forEach((input , i) => {
-        valdiate(input , i);
-    })
-    try3.forEach((input , i) => {
-        valdiate(input , i);
-    })
-    try4.forEach((input , i) => {
-        valdiate(input , i);
-    })
-    try5.forEach((input , i) => {
-        valdiate(input , i);
-    })
+    let tries = [try1 , try2 , try3 , try4 , try5];
+    for(let i= 0 ; i < tries.length ; i++){
+        tries[i].forEach((input , i) => {
+            valdiate(input , i)
+        })
+    }
 }
 
 checkBtn.addEventListener("click" , validate1);
